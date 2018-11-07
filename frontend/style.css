@@ -1,0 +1,70 @@
+/* stylelint-disable selector-list-comma-newline-after */
+
+.blog-header {
+    line-height: 1;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.blog-header-logo {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 2.25rem;
+}
+
+.game-board {
+    width: 462px;
+    margin: 10px auto;
+    white-space: nowrap;
+}
+
+.board-cell {
+    background-color: #343a40;
+    color: white;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    font-size: 150px;
+    line-height: 0;
+    padding-top: 65px;
+    margin: 2px;
+    text-align: center;
+    transition: background-color 100ms ease-in-out;
+
+    cursor: not-allowed;
+}
+
+.board-cell.available {
+    cursor: pointer;
+}
+
+.board-cell.available:hover {
+    background-color: #6c757d;
+}
+
+.player-info {
+    float: right;
+    margin: 2px;
+}
+
+@media screen and (max-width: 500px) {
+    .game-board {
+        width: 312px;
+    }
+    .board-cell {
+        width: 100px;
+        height: 100px;
+        font-size: 100px;
+        padding-top: 40px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .game-board {
+        width: 192px;
+    }
+    .board-cell {
+        width: 60px;
+        height: 60px;
+        font-size: 75px;
+        padding-top: 25px;
+    }
+}
