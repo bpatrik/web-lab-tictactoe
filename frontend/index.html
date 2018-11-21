@@ -19,7 +19,8 @@
         </div>
     </header>
 
-    <div class="game-board">
+    <div class="game-container" id="game">
+        <div id="game-board">
         <div class="board-cell">X</div><!--
      --><div class="board-cell">O</div><!--
      --><div class="board-cell available">&nbsp;</div><br/><!--
@@ -29,8 +30,8 @@
      --><div class="board-cell available">&nbsp;</div><!--
      --><div class="board-cell">O</div><!--
      --><div class="board-cell available">&nbsp;</div>
-
-        <div class="player-info ">
+        </div>
+        <div class="player-info" id="player-info">
             next player: x
         </div>
 
@@ -47,5 +48,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
+
+<script src="model/Board.js"></script>
+<script src="model/Game.js"></script>
+<script src="UI.js"></script>
+<script src="main.js"></script>
 </body>
 </html>

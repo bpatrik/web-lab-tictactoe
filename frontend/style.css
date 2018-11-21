@@ -10,7 +10,7 @@
     font-size: 2.25rem;
 }
 
-.game-board {
+.game-container {
     width: 462px;
     margin: 10px auto;
     white-space: nowrap;
@@ -46,8 +46,9 @@
     margin: 2px;
 }
 
+
 @media screen and (max-width: 500px) {
-    .game-board {
+    .game-container {
         width: 312px;
     }
     .board-cell {
@@ -58,7 +59,7 @@
     }
 }
 @media screen and (max-width: 320px) {
-    .game-board {
+    .game-container {
         width: 192px;
     }
     .board-cell {
