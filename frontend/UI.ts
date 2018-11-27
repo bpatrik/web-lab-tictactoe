@@ -1,4 +1,5 @@
 import {Game} from './model/Game';
+import {GameDTO} from '../common/GameDTO';
 
 export class UI {
 
@@ -7,33 +8,29 @@ export class UI {
     [null, null, null]];
 
   constructor(private game: Game, private $gameDiv: JQuery) {
-
-
     this.game.onUpdate = () => {
-      for (let x = 0; x < 3; x++) {
-        for (let y = 0; y < 3; y++) {
-          if (!this.game.Board.isEmpty(x, y)) {
-            this.$cells[x][y].html(this.game.Board.get(x, y)).removeClass('available');
-          }
-        }
-      }
-      $gameDiv.find('#player-info').html('next player: ' + this.game.NextPlayer);
-      if (game.isGameOver()) {
-        if (game.isWinner(game.PLAYER_X)) {
-          $gameDiv.find('#player-info').html(game.PLAYER_X + ' won');
-        }
-        if (game.isWinner(game.PLAYER_O)) {
-          $gameDiv.find('#player-info').html(game.PLAYER_O + ' won');
-        }
-        if (!game.isMoreStep()) {
-          $gameDiv.find('#player-info').html('Tie');
-        }
-      }
-
+      this.updateUI(this.game);
     };
     this.generateBoard();
   }
 
+  private updateUI(game: GameDTO) {
+    for (let x = 0; x < 3; x++) {
+      for (let y = 0; y < 3; y++) {
+        if (!this.game.Board.isEmpty(x, y)) {
+          this.$cells[x][y].html(this.game.Board.Cells[x][y]).removeClass('available');
+        }
+      }
+    }
+    this.$gameDiv.find('#player-info').html('next player: ' + this.game.NextPlayer);
+    if (game.GameOver) {
+      if (game.Winner !== null) {
+        this.$gameDiv.find('#player-info').html(game.Winner + ' won');
+      } else {
+        this.$gameDiv.find('#player-info').html('Tie');
+      }
+    }
+  }
 
   private generateBoard(): void {
     this.$gameDiv.find('#game-board').empty();

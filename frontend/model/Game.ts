@@ -1,8 +1,8 @@
 import {Board} from './Board';
+import {GameDTO, playerType} from '../../common/GameDTO';
 
-export type playerType = 'O' | 'X';
 
-export class Game {
+export class Game implements GameDTO {
 
   public readonly PLAYER_X: playerType = 'X';
   public readonly PLAYER_O: playerType = 'O';
@@ -50,10 +50,11 @@ export class Game {
     return false;
   }
 
+
   isMoreStep(): boolean {
     for (let x = 0; x < 3; x++) {
       for (let y = 0; y < 3; y++) {
-        if (this.board.get(x, y) === null) {
+        if (this.board.Cells[x][y] === null) {
           return true;
         }
       }
@@ -61,12 +62,22 @@ export class Game {
     return false;
   }
 
-  isGameOver(): boolean {
+  get GameOver(): boolean {
     return this.isWinner(this.PLAYER_O) || this.isWinner(this.PLAYER_X) || !this.isMoreStep();
   }
 
+  get Winner(): playerType {
+    if (this.isWinner(this.PLAYER_X)) {
+      return this.PLAYER_X;
+    }
+    if (this.isWinner(this.PLAYER_O)) {
+      return this.PLAYER_O;
+    }
+    return null;
+  }
+
   onBoardClick(x, y): void {
-    if (!this.board.isEmpty(x, y) || this.isGameOver()) {
+    if (!this.board.isEmpty(x, y) || this.GameOver) {
       return;
     }
     this.board.set(x, y, this.nextPlayer);
