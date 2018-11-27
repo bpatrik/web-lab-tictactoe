@@ -9,10 +9,13 @@
     font-family: "Playfair Display", Georgia, "Times New Roman", serif;
     font-size: 2.25rem;
 }
+#game{
 
-.game-container {
     width: 462px;
     margin: 10px auto;
+}
+
+.game-board {
     white-space: nowrap;
 }
 
@@ -46,9 +49,8 @@
     margin: 2px;
 }
 
-
 @media screen and (max-width: 500px) {
-    .game-container {
+    #game {
         width: 312px;
     }
     .board-cell {
@@ -59,7 +61,7 @@
     }
 }
 @media screen and (max-width: 320px) {
-    .game-container {
+    #game{
         width: 192px;
     }
     .board-cell {
