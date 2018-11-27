@@ -49,10 +49,25 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.19/system.js"
+        integrity="sha256-HCJlhCZ21EKx0Wo6wCF+rbeBHlVlOSJccd4zTQe2TNw=" crossorigin="anonymous"></script>
 
-<script src="model/Board.js"></script>
-<script src="model/Game.js"></script>
-<script src="UI.js"></script>
-<script src="main.js"></script>
+
+<script>
+    System.config({
+        map: {
+            "jquery": "../../../node_modules/jquery/dist/jquery.min.js",
+        },
+        packages: {
+            './': {
+                defaultJSExtensions: 'js'
+            }
+        },
+        transpiler: false,
+        meta: {'*': {authorization: true}}
+    });
+    System.import('./main').then(null, console.error.bind(console));
+</script>
+
 </body>
 </html>

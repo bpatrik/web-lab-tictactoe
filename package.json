@@ -1,0 +1,24 @@
+{
+  "name": "web-lab-tictactoe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bpatrik/web-lab-tictactoe.git"
+  },
+  "author": "Patrik J. Braun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bpatrik/web-lab-tictactoe/issues"
+  },
+  "homepage": "https://github.com/bpatrik/web-lab-tictactoe#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.3.22",
+    "@types/node": "^10.12.10",
+    "typescript": "^3.1.6"
+  }
+}
