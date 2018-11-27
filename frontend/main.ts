@@ -1,5 +1,6 @@
-import {Game} from "./model/Game";
-import {UI} from "./UI";
+import {Game} from './model/Game';
+import {UI} from './UI';
 
 
-new UI(new Game(), $('#game'));
+// noinspection JSUnusedLocalSymbols
+const ui = new UI(new Game(), $('#game'));
