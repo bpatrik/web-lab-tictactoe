@@ -2,14 +2,12 @@ import {Board} from './Board';
 import {GameDTO, playerType} from '../../common/GameDTO';
 
 
-export class Game implements GameDTO {
+export class Game {
 
   public readonly PLAYER_X: playerType = 'X';
   public readonly PLAYER_O: playerType = 'O';
   private nextPlayer: playerType = this.PLAYER_X;
   private board = new Board();
-  public onUpdate = function () {
-  };
 
   changePlayer() {
     this.nextPlayer = this.nextPlayer === this.PLAYER_X ? this.PLAYER_O : this.PLAYER_X;
@@ -83,7 +81,15 @@ export class Game implements GameDTO {
     this.board.set(x, y, this.nextPlayer);
     this.changePlayer();
 
-    this.onUpdate();
+  }
+
+  public toJson(): GameDTO {
+    return {
+      board: this.Board.toJson(),
+      gameOver: this.GameOver,
+      nextPlayer: this.nextPlayer,
+      winner: this.Winner
+    };
   }
 }
 

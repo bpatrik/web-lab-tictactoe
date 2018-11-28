@@ -1,8 +1,8 @@
 import {BoardDTO} from '../../common/BoardDTO';
 import {playerType} from '../../common/GameDTO';
 
-export class Board implements BoardDTO {
-  private cells: playerType[][] = [[null, null, null],
+export class Board {
+  public cells: playerType[][] = [[null, null, null],
     [null, null, null],
     [null, null, null]];
 
@@ -24,5 +24,11 @@ export class Board implements BoardDTO {
 
   getSerialized(i: number): playerType {
     return this.cells[i % this.cells.length][Math.floor(i / this.cells.length)];
+  }
+
+  public toJson(): BoardDTO {
+    return {
+      cells: this.Cells
+    };
   }
 }

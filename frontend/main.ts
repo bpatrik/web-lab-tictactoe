@@ -1,6 +1,9 @@
-import {Game} from './model/Game';
 import {UI} from './UI';
+import {ServerConnector} from './ServerConnector';
 
 
-// noinspection JSUnusedLocalSymbols
-const ui = new UI(new Game(), $('#game'));
+const serverConnector = new ServerConnector();
+const ui = new UI($('#game'));
+
+serverConnector.onNewState = ui.updateUI;
+ui.onCellClick = serverConnector.onNewMove;

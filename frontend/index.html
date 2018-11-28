@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tic-Tac-Toe</title>
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-          crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Tic-Tac-Toe</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
-    <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-center align-items-center">
-            <div class="col-12 text-center">
-                <span class="blog-header-logo text-dark" href="#">Tic-Tac-Toe game</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="game-container" id="game">
-        <div id="game-board">
-        <div class="board-cell">X</div><!--
-     --><div class="board-cell">O</div><!--
-     --><div class="board-cell available">&nbsp;</div><br/><!--
-     --><div class="board-cell available">&nbsp;</div><!--
-     --><div class="board-cell">X</div><!--
-     --><div class="board-cell available">&nbsp;</div><br/><!--
-     --><div class="board-cell available">&nbsp;</div><!--
-     --><div class="board-cell">O</div><!--
-     --><div class="board-cell available">&nbsp;</div>
-        </div>
-        <div class="player-info" id="player-info">
-            next player: x
-        </div>
-
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-center align-items-center">
+      <div class="col-12 text-center">
+        <span class="blog-header-logo text-dark" href="#">Tic-Tac-Toe game</span>
+      </div>
     </div>
+  </header>
+
+  <div class="game-container" id="game">
+    <div id="game-board">
+      <div class="board-cell">X</div><!--
+     -->
+      <div class="board-cell">O</div><!--
+     -->
+      <div class="board-cell available">&nbsp;</div>
+      <br/><!--
+     -->
+      <div class="board-cell available">&nbsp;</div><!--
+     -->
+      <div class="board-cell">X</div><!--
+     -->
+      <div class="board-cell available">&nbsp;</div>
+      <br/><!--
+     -->
+      <div class="board-cell available">&nbsp;</div><!--
+     -->
+      <div class="board-cell">O</div><!--
+     -->
+      <div class="board-cell available">&nbsp;</div>
+    </div>
+    <div class="player-info" id="player-info">
+      next player: x
+    </div>
+
+  </div>
 
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -54,19 +64,19 @@
 
 
 <script>
-    System.config({
-        map: {
-            "jquery": "../../../node_modules/jquery/dist/jquery.min.js",
-        },
-        packages: {
-            './': {
-                defaultJSExtensions: 'js'
-            }
-        },
-        transpiler: false,
-        meta: {'*': {authorization: true}}
-    });
-    System.import('./main').then(null, console.error.bind(console));
+  System.config({
+    map: {
+      "jquery": "../../../node_modules/jquery/dist/jquery.min.js",
+    },
+    packages: {
+      './': {
+        defaultJSExtensions: 'js'
+      }
+    },
+    transpiler: false,
+    meta: {'*': {authorization: true}}
+  });
+  System.import('./main').then(null, console.error.bind(console));
 </script>
 
 </body>

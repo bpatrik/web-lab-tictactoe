@@ -1,5 +1,6 @@
-import {playerType} from './IGame';
+import {playerType} from './GameDTO';
+
 
 export interface BoardDTO {
-  Cells: ReadonlyArray<ReadonlyArray<playerType>>;
+  cells: ReadonlyArray<ReadonlyArray<playerType>>;
 }
