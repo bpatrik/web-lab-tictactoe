@@ -64,3 +64,5 @@ typings/
 
 frontend/**/*.js
 frontend/**/*.js.map
+backend/**/*.js
+backend/**/*.js.map
