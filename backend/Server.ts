@@ -5,14 +5,13 @@ import * as bodyParser from 'body-parser';
 import {GameRouter} from './routes/GameRouter';
 import * as http from 'http';
 import {Server as HTTPServer} from 'http';
-import * as path from 'path';
 import {PublicRouter} from './routes/PublicRouter';
 
 export class Server {
 
   private app: Express;
   private server: HTTPServer;
-  private port = 3000;
+  private port =  process.env.PORT || 3000;
 
   constructor() {
     this.init();
