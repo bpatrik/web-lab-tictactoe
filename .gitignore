@@ -66,3 +66,7 @@ frontend/**/*.js
 frontend/**/*.js.map
 backend/**/*.js
 backend/**/*.js.map
+common/**/*.js
+common/**/*.js.map
+test/**/*.js
+test/**/*.js.map
