@@ -2,7 +2,7 @@ import {BoardDTO} from '../../common/BoardDTO';
 import {playerType} from '../../common/GameDTO';
 
 export class Board {
-  public cells: playerType[][] = [[null, null, null],
+  private cells: playerType[][] = [[null, null, null],
     [null, null, null],
     [null, null, null]];
 
