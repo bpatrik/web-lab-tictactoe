@@ -13,7 +13,7 @@ describe('Board', () => {
 
     for (let x = 0; x < board.Cells.length; x++) {
       for (let y = 0; y < board.Cells.length; y++) {
-        expect(board.isEmpty(x,y)).to.be.true;
+        expect(board.isEmpty(x, y)).to.be.true;
       }
     }
   });

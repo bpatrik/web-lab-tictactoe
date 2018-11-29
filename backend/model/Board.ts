@@ -14,7 +14,7 @@ export class Board {
     if (!this.isEmpty(x, y)) {
       throw new Error('cell not empty');
     }
-    this.cells[x][y] = player;
+    this.cells[x][y] = 'O';
   }
 
 
