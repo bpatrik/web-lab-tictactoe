@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install": "tsc",
     "start": "node backend/index.js",
     "pretest": "tsc",
     "test": "mocha --recursive test/backend/unit"
